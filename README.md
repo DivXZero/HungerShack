@@ -22,7 +22,7 @@ docker-compose run web rake db:create db:migrate db:seed
 
 #### Run the project
 ```
-docker-compose run
+docker-compose up
 ```
 
 Visit the project in your browser:
