@@ -1,24 +1,29 @@
-# README
+# HungerShack
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
+Clone the project
+```
+git clone https://github.com/DivXZero/HungerShack.git
+```
 
-* Ruby version
+[Install Docker](https://docs.docker.com/engine/installation/) :whale:
 
-* System dependencies
+#### Build the project
+```
+cd HungerShack
+docker-compose build
+```
 
-* Configuration
+Once the project is successfully built, setup the databases
+```
+docker-compose run web rake db:create db:migrate db:seed
+```
 
-* Database creation
+#### Run the project
+```
+docker-compose run
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Visit the project in your browser:
+[http://localhost:3000](http://localhost:3000)
