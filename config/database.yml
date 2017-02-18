@@ -1,0 +1,22 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password:
+  host: db
+
+development:
+  <<: *default
+  database: HungerShack_development
+
+test:
+  <<: *default
+  database: HungerShack_test
+
+production:
+  <<: *default
+  database: HungerShack_production
+  username: HungerShack
+  password: <%= ENV['HUNGERSHACK_DATABASE_PASSWORD'] %>
