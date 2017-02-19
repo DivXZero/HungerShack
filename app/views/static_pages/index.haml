@@ -6,10 +6,11 @@
     .ui.selection.dropdown
       %input{type: 'hidden', name: 'selection'}
       %i.dropdown.icon
-      .default.text Gender
+      .default.text State
       .menu
-        .item{data: {value: 'male'}} Male
-        .item{data: {value: 'female'}} Female
+        - State.all.each do |state|
+          .item{data: {value: state.id}}
+            = state.state
 
     .ui.vertical.menu
       %a.active.item Friends
@@ -21,8 +22,3 @@
           %a.item Edit Profile
           %a.item Choose Language
           %a.item Account Settings
-
-
-%pre
-  - @addresses.each do |address|
-    = address.street
