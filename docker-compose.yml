@@ -11,4 +11,4 @@ services:
     depends_on:
       - db
   db:
-    image: postgres-uuid
+    image: ntboes/postgres-uuid
