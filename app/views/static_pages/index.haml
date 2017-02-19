@@ -1,6 +1,23 @@
-&nbsp;
-%h2.ui.dividing.header.red
-  %i.marker.icon
-  HungerShack
-.ui.content
-  %p o_O
+.row
+  .column
+
+    %h1.ui.header Dropdown
+    .ui.divider
+    .ui.selection.dropdown
+      %input{type: 'hidden', name: 'selection'}
+      %i.dropdown.icon
+      .default.text Gender
+      .menu
+        .item{data: {value: 'male'}} Male
+        .item{data: {value: 'female'}} Female
+
+    .ui.vertical.menu
+      %a.active.item Friends
+      %a.item Messages
+      .ui.dropdown.item
+        %i.dropdown.icon
+        More
+        .menu
+          %a.item Edit Profile
+          %a.item Choose Language
+          %a.item Account Settings

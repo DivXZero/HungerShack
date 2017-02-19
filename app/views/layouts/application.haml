@@ -7,5 +7,11 @@
     = javascript_include_tag 'application', data: { 'turbolinks-track': 'reload' }
 
   %body
-    .ui.text.container
+    = render 'header'
+
+    .ui.grid.container
+      &nbsp;
       = yield
+      &nbsp;
+
+    = render 'footer'
