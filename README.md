@@ -16,8 +16,8 @@ alias drst='rm tmp/pids/server.pid'
 
 ## :octocat: Clone & Build
 ```bash
-git clone https://github.com/juliabalfour/doctor-finder.git
-cd doctor-finder
+git clone https://github.com/DivXZero/HungerShack.git
+cd HungerShack
 dbuild
 ```
 
@@ -25,13 +25,13 @@ dbuild
 ```bash
 dup
 ```
-In another terminal, cd to 'doctor-finder' and run:
+In another terminal, cd to 'HungerShack' and run:
 ```bash
 drun web rake db:create db:migrate db:seed
 ```
 
 ## :metal: Up & running
-You should now have the doctor-finder project running at http://localhost:3000/
+You should now have the Hunger Shack project running at http://localhost:3000/
 The original terminal session can be used to monitor the rails server, the second may be used to execute commands. The server can be stopped at any time using ctrl-c, you may also close the terminal and the container will continue to run.
 
 ### Warnings / Cleanup
