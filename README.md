@@ -21,13 +21,14 @@ cd HungerShack
 dbuild
 ```
 
+Once the docker container has been built, create the database(s):
+```bash
+drun web rake db:create db:migrate db:seed
+```
+
 ## :rocket: Launch the Docker container(s)
 ```bash
 dup
-```
-In another terminal, cd to 'HungerShack' and run:
-```bash
-drun web rake db:create db:migrate db:seed
 ```
 
 ## :metal: Up & running
