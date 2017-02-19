@@ -21,3 +21,8 @@
           %a.item Edit Profile
           %a.item Choose Language
           %a.item Account Settings
+
+
+%pre
+  - @addresses.each do |address|
+    = address.street
