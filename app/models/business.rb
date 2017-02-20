@@ -1,4 +1,5 @@
 class Business < ApplicationRecord
-  belongs_to :address
+  has_many :restaurants
   belongs_to :user
+  has_one :address
 end
