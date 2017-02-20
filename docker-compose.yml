@@ -1,14 +1,31 @@
 version: '3'
+
 services:
+
   web:
     build:
       context: .
     command: bundle exec rails s -p 3000 -b 0.0.0.0
     ports:
-      - "3000:3000"
+      - '3000:3000'
     volumes:
       - .:/hungershack
+    env_file:
+      - '.env'
     depends_on:
       - db
+      - redis
+
   db:
     image: ntboes/postgres-uuid
+    environment:
+      POSTGRES_USER: 'hsdb_clandestine'
+      POSTGRES_PASSWORD: 'm4g1c5auc3!'
+    ports:
+      - '5432:5432'
+
+  redis:
+    image: 'redis:3.2-alpine'
+    command: redis-server --requirepass m4g1c5auc3!
+    ports:
+      - '6379:6379'

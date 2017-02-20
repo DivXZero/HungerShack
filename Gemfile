@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'redis-rails', '~> 5.0', '>= 5.0.1'
+
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'semantic-ui-sass', '~> 2.2', '>= 2.2.7.1'
 
