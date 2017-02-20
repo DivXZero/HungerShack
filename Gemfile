@@ -37,6 +37,11 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'redis-rails', '~> 5.0', '>= 5.0.1'
 
+gem 'devise', '~> 4.2'
+gem 'pundit', '~> 1.1'
+# gem 'rolify', '~> 5.1'
+# gem 'cancancan'
+
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'semantic-ui-sass', '~> 2.2', '>= 2.2.7.1'
 

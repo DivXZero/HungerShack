@@ -1,0 +1,20 @@
+.row
+  .column
+    %h2.ui.header
+      %i.birthday.icon
+      .content Register
+    .ui.divider
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'ui form' }) do |f|
+      .field
+        = f.label :email
+        = f.email_field :email, autofocus: true
+      .field
+        = f.label :password
+        = f.password_field :password, autocomplete: 'off'
+      .field
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, autocomplete: 'off'
+      .actions
+        = f.submit 'Register', class: 'ui primary button'
+
+= render 'devise/shared/links'

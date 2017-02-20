@@ -1,24 +1,6 @@
 .row
   .column
 
-    %h1.ui.header Dropdown
+    %h1.ui.header Hungry?
     .ui.divider
-    .ui.selection.dropdown
-      %input{type: 'hidden', name: 'selection'}
-      %i.dropdown.icon
-      .default.text State
-      .menu
-        - State.all.each do |state|
-          .item{data: {value: state.id}}
-            = state.state
-
-    .ui.vertical.menu
-      %a.active.item Friends
-      %a.item Messages
-      .ui.dropdown.item
-        %i.dropdown.icon
-        More
-        .menu
-          %a.item Edit Profile
-          %a.item Choose Language
-          %a.item Account Settings
+    o_O
