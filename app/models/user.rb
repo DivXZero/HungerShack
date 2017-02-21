@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  rolify
   has_one :address
   has_many :businesses
 

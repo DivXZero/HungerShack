@@ -6,6 +6,9 @@ class CreateRestaurants < ActiveRecord::Migration[5.0]
       t.uuid :business_id, foreign_key: true
       t.index :business_id
 
+      t.uuid :address_id, foreign_key: true
+      t.index :address_id
+
       t.boolean :active, default: true
 
       t.timestamps

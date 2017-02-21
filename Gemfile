@@ -39,7 +39,7 @@ gem 'redis-rails', '~> 5.0', '>= 5.0.1'
 
 gem 'devise', '~> 4.2'
 gem 'pundit', '~> 1.1'
-# gem 'rolify', '~> 5.1'
+gem 'rolify', '~> 5.1'
 # gem 'cancancan'
 
 gem 'haml', '~> 4.0', '>= 4.0.7'
