@@ -1,6 +1,5 @@
 class StaticPagesController < ApplicationController
   def index
-    session[:current_ip] = request.remote_ip
-    @addresses = Address.all
+    @users = User.all
   end
 end

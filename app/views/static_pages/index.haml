@@ -3,4 +3,6 @@
 
     %h1.ui.header Hungry?
     .ui.divider
-    o_O
+    - @users.each do |user|
+      = user.inspect.to_yaml
+      = user.address.inspect.to_yaml

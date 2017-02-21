@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   rolify
-  has_one :address
+  has_one :address, as: :address_poly
   has_many :businesses
 
   # Include default devise modules. Others available are:

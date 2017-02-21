@@ -1,11 +1,10 @@
 class DeviseCreateUsers < ActiveRecord::Migration[5.0]
   def change
-    create_table :users do |t|
+    create_table :users, id: :uuid do |t|
       t.string :first_name
       t.string :last_name
 
-      t.uuid :address_id, foreign_key: true
-      t.index :address_id
+      t.integer :address_poly_id
 
       t.boolean :active, default: true
 

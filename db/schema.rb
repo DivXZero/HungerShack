@@ -16,23 +16,24 @@ ActiveRecord::Schema.define(version: 20170221003122) do
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
 
-  create_table "addresses", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+  create_table "addresses", force: :cascade do |t|
     t.string   "street"
     t.string   "street2"
     t.string   "city"
     t.string   "zip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "address_poly_id"
+    t.string   "address_poly_type"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "businesses", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.string   "name"
-    t.uuid     "address_id"
+    t.integer  "address_poly_id"
     t.uuid     "user_id"
-    t.boolean  "active",     default: true
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.index ["address_id"], name: "index_businesses_on_address_id", using: :btree
+    t.boolean  "active",          default: true
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.index ["user_id"], name: "index_businesses_on_user_id", using: :btree
   end
 
@@ -56,12 +57,11 @@ ActiveRecord::Schema.define(version: 20170221003122) do
 
   create_table "restaurants", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.string   "name"
+    t.integer  "address_poly_id"
     t.uuid     "business_id"
-    t.uuid     "address_id"
-    t.boolean  "active",      default: true
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.index ["address_id"], name: "index_restaurants_on_address_id", using: :btree
+    t.boolean  "active",          default: true
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.index ["business_id"], name: "index_restaurants_on_business_id", using: :btree
   end
 
@@ -75,10 +75,10 @@ ActiveRecord::Schema.define(version: 20170221003122) do
     t.index ["name"], name: "index_roles_on_name", using: :btree
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.uuid     "address_id"
+    t.integer  "address_poly_id"
     t.boolean  "active",                 default: true
     t.string   "username",                              null: false
     t.string   "email",                  default: "",   null: false
@@ -93,7 +93,6 @@ ActiveRecord::Schema.define(version: 20170221003122) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
-    t.index ["address_id"], name: "index_users_on_address_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
